@@ -3,6 +3,16 @@ import MiniReact from "../MiniReact";
 
 const { render, createElement } = MiniReact;
 
-const component = <div id="container">text</div>;
+const tree = (
+  <div id="container">
+    <h1>Title</h1>
+    <h2>Subtitle</h2>
+    <p>Some dummy text</p>
+  </div>
+);
 
-render(component, document.getElementById("root"));
+function App(props) {
+  return <div>{props.name}</div>
+}
+
+render(<App name="Ted" />, document.getElementById("root"));
